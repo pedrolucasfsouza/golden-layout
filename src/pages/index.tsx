@@ -87,9 +87,9 @@ export default function Home() {
                     </Flex>
                 </Wrapper>
             </Container>
-            <Container className={`relative !pt-0`}>
+            <Container className={`relative !pt-0 `} baseClassName={`z-[60]`}>
                 <Wrapper className={`items-center justify-center`}>
-                    <Flex className={`flex-1 w-full z-50 gap-16 flex-col xl:flex-row`}>
+                    <Flex className={`flex-1 w-full gap-16 flex-col xl:flex-row`}>
                         <Stack spacing={40} className={`flex-1 items-center`}>
                             <Slide left>
                                 <SimpleGrid
@@ -143,7 +143,7 @@ export default function Home() {
                                 Bem-vindo! Há um universo de possibilidades.
                             </Text>
 
-                            <Link href={`/nossos-servicos`} className={`!mt-6`}>
+                            <Link href={`/nossos-servicos`} className={`!mt-6 z-[60]`}>
                                 <Button className={`!px-6 !py-2 h-max !text-[16px] `}>
                                     Conheça nossos serviços{" "}
                                     <ArrowTopRight
