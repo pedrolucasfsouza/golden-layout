@@ -1,5 +1,6 @@
 import Analytics from "@/components/Analytics";
 import { Head, Html, Main, NextScript } from "next/document";
+import PixelFb from "./pixel-fb";
 
 export default function Document() {
   return (
@@ -10,6 +11,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <PixelFb />
         <Analytics />
       </body>
     </Html>
