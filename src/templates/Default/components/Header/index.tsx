@@ -13,6 +13,8 @@ import LoginIcon from "../../../../../public/icons/External.svg";
 import InviteIcon from "../../../../../public/icons/Invite.svg";
 import LogoutMobileIcon from "../../../../../public/icons/logout-mobile.svg";
 
+import ArrowTopRight from "../../../../../public/icons/arrow-right-top.svg";
+
 type HeaderProps = {};
 
 export function Header({}: HeaderProps) {
@@ -108,11 +110,11 @@ export function Header({}: HeaderProps) {
                       <Flex
                         className={`items-center gap-2 cursor-pointer [&>svg>path]:fill-white`}
                       >
-                        {isMenuOpen && <InviteIcon />}
+                        {isMenuOpen && <ArrowTopRight />}
                         <Text
                           className={`h3-semibold-uppercase xl:!h-4 !text-white`}
                         >
-                          SOLICITE SEU CONVITE
+                          ACESSAR AGORA
                         </Text>
                       </Flex>
                     </Button>
@@ -173,15 +175,15 @@ export function Header({}: HeaderProps) {
                         process.env.REACT_APP_APP_URL || "https://dev.app.boleta.ai"
                       }/fila-de-espera`}
                     >
-                      <Button className={`!py-2`}>
+                      <Button className={`!py-2 !pr-6`}>
                         <Flex
                           className={`items-center gap-2 cursor-pointer [&>svg>path]:fill-white`}
                         >
-                          <InviteIcon />
+                          <ArrowTopRight />
                           <Text
                             className={`h3-semibold-uppercase xl:!h-4 !text-white`}
                           >
-                            SOLICITE SEU CONVITE
+                            ACESSAR AGORA
                           </Text>
                         </Flex>
                       </Button>

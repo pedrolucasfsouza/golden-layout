@@ -260,9 +260,9 @@ export default function Home() {
               </span>
                         </Text>
 
-            <Link href={`https://app.boleta.ai/fila-de-espera`}>
+            <Link href={`https://app.boleta.ai/cadastro`}>
               <Button className={`!px-6 !py-2 !text-[16px]`}>
-                Solicite seu convite{" "}
+                Acessar Agora
                 <ArrowTopRight
                   className={`ml-4 xl:ml-12 scale-75 xl:scale-100`}
                 />
