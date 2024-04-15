@@ -64,16 +64,39 @@ export default function Home() {
                                             lineHeight: `111%`,
                                         }}
                                     >
-                                        Que tal ter sua DARF calculada automaticamente, sem pagar
-                                        por isso?
+                                        A sua central de inteligência para seus investimentos na bolsa
                                     </Text>
                                     <Text
                                         className={`!text-gray_3 leading-[165%] inter h2-regular xl:text-[16px]`}
                                     >
-                                        O Boleta.ai é a central de inteligência do investidor.
-                                        Oferecemos as mesmas tecnologias usadas pelos grandes
-                                        players do mercado financeiro, com integração direta na B3.
+                                        Somos a plataforma de gestão de ativos mais precisa do mercado, para que você tenha 100% de controle sobre sua carteira.
                                     </Text>
+<Flex className="gap-2 justify-start flex-row">
+                                    <Button className={`!py-2 !pr-4 !h-max bg-transparent border border-white border-1`}>
+                      <Flex
+                        className={`items-center gap-2 !bg-transparent cursor-pointer [&>svg>path]:fill-white`}
+                      >
+                        {<ArrowTopRight />}
+                        <Text
+                          className={`h3-semibold-uppercase xl:!h-4 !text-white`}
+                        >
+                          SAIBA MAIS
+                        </Text>
+                      </Flex>
+                    </Button>
+
+                    <Button className={`!py-2 !h-max !pr-4`}>
+                      <Flex
+                        className={`items-center gap-2 cursor-pointer [&>svg>path]:fill-white`}
+                      >
+                        {<ArrowTopRight />}
+                        <Text
+                          className={`h3-semibold-uppercase xl:!h-4 !text-white`}
+                        >
+                          ACESSAR AGORA
+                        </Text>
+                      </Flex>
+                    </Button></Flex>
                                 </Stack>
                             </Slide>
                         </Flex>
