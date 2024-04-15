@@ -6,7 +6,7 @@ import {Text} from "@/components/Text";
 import {Wrapper} from "@/components/Wrapper";
 import {useWindow} from "@/hooks/useWindow";
 import {DefaultTemplate} from "@/templates/Default";
-import {Flex, SimpleGrid, Stack} from "@chakra-ui/react";
+import {Box, Flex, SimpleGrid, Stack} from "@chakra-ui/react";
 import Slide from "react-reveal/Slide";
 import ArrowTopRight from "../../public/icons/arrow-right-top.svg";
 import ArrowDown from '../../public/icons/arrow-down.svg'
@@ -17,6 +17,7 @@ import ContractIcon from "../../public/icons/oportunidades/contracts.svg";
 import MarginsIcon from "../../public/icons/oportunidades/margins.svg";
 import PerformanceIcon from "../../public/icons/oportunidades/performance.svg";
 import PeoplesIcon from "../../public/icons/peoples.svg";
+import { useCallback } from "react";
 
 export default function Home() {
     const {isMobile, isMedium} = useWindow({
@@ -39,6 +40,73 @@ export default function Home() {
             </Flex>
         );
     };
+
+    const Element = useCallback(({title, description, image, tabletImage, mobileImage, black}: any) => {
+      return (
+          <Container className={`relative xl:!pb-10   z-50`}>
+              <Wrapper
+                  className={`my-0 xl:my-auto items-start xl:items-center justify-start xl:justify-center !flex-col gap-10 [&>div]:overflow-hidden`}>
+                  <Flex
+                      className={`w-full z-50 gap-16 flex-col xl:flex-row ${black ? `bg-1` : `bg-white` } pb-0 px-6 pt-6 xl:px-16 xl:py-32 rounded-[24px] bg-gray_1/35 shadow-common relative`}>
+                      <Stack spacing={16} className={`xl:w-[46%]`}>
+                          <Box className={`bg-blue_primary w-max p-2 rounded-[16px]`}>
+                              <img src={`/icons/darf-title.svg`} className={`w-[32px]`}/>
+                          </Box>
+                          <Text className={`${black ? `!text-white` : `!text-gray_1` }  text-[28px] xl:text-[38px] font-semibold`} style={{
+                              lineHeight: `111%`,
+                              letterSpacing: `-4% `
+                          }}>{title}</Text>
+                          <Text className={`${black ? `!text-gray_3` : `!text-gray_2` } inter text-[14px] xl:text-[16px] !mt-8`}>
+                              {description}
+                          </Text>
+                      </Stack>
+                      <Flex className={`justify-center items-center w-full xl:w-5/12 h-full xl:absolute right-0 bottom-0`}>
+                          <Slide right>
+                              <img
+                                  src={isMedium ? tabletImage : isMobile ? mobileImage : image}
+                                  className={`xl:absolute right-0 bottom-0 max-h-full object-cover`}
+                              />
+                          </Slide>
+                      </Flex>
+                  </Flex>
+              </Wrapper>
+          </Container>
+      )
+  }, [isMedium, isMobile])
+
+
+  const ElementRTL = useCallback(({title, description, image, tabletImage, mobileImage}: any) => {
+      return (
+          <Container className={`relative xl:!pt-0 xl:!pb-0  z-50 `}>
+              <Wrapper
+                  className={`my-0  xl:my-auto items-start xl:items-center justify-start xl:justify-center !flex-col gap-10 [&>div]:overflow-hidden `}>
+                  <Flex
+                      className={`w-full !shadow-lg z-50 gap-16 flex-col xl:flex-row bg-1 pt-0 px-6 pb-6 xl:px-16 xl:py-32 bg-gray_1/35 rounded-[24px] relative justify-end`}>
+                      <Flex className={`justify-center items-center w-full xl:w-5/12 h-full xl:absolute left-0 bottom-0`}>
+                          <Slide left>
+                              <img
+                                  src={isMedium ? tabletImage : isMobile ? mobileImage : image}
+                                  className={`xl:absolute left-0 top-0 xl:max-h-full object-cover`}
+                              />
+                          </Slide>
+                      </Flex>
+                      <Stack spacing={16} className={`xl:w-[46%]`}>
+                          <Box className={`bg-blue_primary w-max p-2 rounded-[16px]`}>
+                              <img src={`/icons/graphics.svg`} className={`w-[32px]`}/>
+                          </Box>
+                          <Text className={`!text-white text-[28px] xl:text-[38px] font-semibold`} style={{
+                              lineHeight: `111%`,
+                              letterSpacing: `-4% `
+                          }}>{title}</Text>
+                          <Text className={`!text-gray_3 inter text-[14px] xl:text-[16px] !mt-8`}>
+                              {description}
+                          </Text>
+                      </Stack>
+                  </Flex>
+              </Wrapper>
+          </Container>
+      )
+  }, [isMedium, isMobile])
     return (
         <DefaultTemplate>
              <Container className={`relative !pt-6 xl:pt-24  min-h-screen z-50`}>
@@ -111,9 +179,7 @@ export default function Home() {
                     <Flex
                         className={`flex-1 w-full z-50 gap-16 flex-col xl:flex-row justify-between`}
                     >
-                          <Stack className={`flex-1 min-w-5/12 mx-auto max-w-[470px]`}>
-                            <img src={"/images/home-2.png"} className={`w-full`}/>
-                        </Stack>
+    
                         <Stack
                             spacing={isMobile ? 16 : 40}
                             className={`flex-1 justify-center xl:items-start items-center`}
@@ -176,36 +242,51 @@ export default function Home() {
                     </Flex>
                 </Wrapper>
             </Container>
-            <Container className={`relative !pt-0 `} baseClassName={`z-[60]`}>
-                <Wrapper className={`items-center justify-center`}>
-                    <Flex className={`flex-1 w-full gap-16 flex-col xl:flex-row`}>
-                        <Stack spacing={40} className={`flex-1 items-center`}>
-                            
-                            <Text
-                                className={`text-[24px] tracking-[-0.08rem] text-center font-semibold`}
+            <Container className="flex-col">
+            <Text
+                                className={`text-[24px] pb-24 tracking-[-0.08rem] text-center font-semibold`}
                                 style={{
                                     lineHeight: `111%`,
                                 }}
                             >
                                 Bem-vindo! Há um universo de possibilidades.
                             </Text>
+        <ElementRTL
+                        title={`Visão geral dos investimentos`}
+                        description={<>
+                            Com o boleta.ai, você tem uma visão completa e detalhada de todos os seus investimentos.
+                            Nossa plataforma mostra para você em um único lugar todas as informações importantes
+                            sobre suas aplicações financeiras.
+                        </>}
+                        mobileImage={`/images/nossos-servicos-2-mobile.png`}
+                        tabletImage={`/images/nossos-servicos-2-tablet.png`}
+                        image={`/images/nossos-servicos-2.png`}
+                    />
 
-                            <Link href={`/nossos-servicos`} className={`!mt-6 z-[60]`}>
-                                <Button className={`!px-6 !py-2 h-max !text-[16px] `}>
-                                    Conheça nossos serviços{" "}
-                                    <ArrowTopRight
-                                        className={`ml-4 xl:ml-12 scale-75 xl:scale-100`}
-                                    />
-                                </Button>
-                            </Link>
-                            {/*<Link href={`/`} className={`text-center text-blue_primary inter hidden xl:flex [&>svg>path]:fill-blue_primary`}>*/}
-                            {/*    Faça parte desse universo. <ArrowTopRight className={`scale-75 xl:scale-100`} />*/}
-                            {/*</Link>*/}
-                        </Stack>
-                    </Flex>
-                </Wrapper>
+<Element dark
+                title={`Cálculo de DARF`}
+                description={<>
+                    Nós sabemos que a declaração do Imposto de Renda pode ser um verdadeiro pesadelo para
+                    muitos investidores. Por isso, <span className={`font-semibold`}>oferecemos um serviço completo de cálculo de DARF</span>,
+                    que vai ajudar você a declarar seus investimentos de forma correta e sem dor de cabeça.
+                </>}
+                mobileImage={`/images/nossos-servicos-1-mobile.png`}
+                tabletImage={`/images/nossos-servicos-1-tablet.png`}
+                image={`/images/nossos-servicos-1.png`}
+            />
+
+<ElementRTL
+                        title={`Calculo IRPF`}
+                        description={<>
+                            Com o boleta.ai, você tem uma visão completa e detalhada de todos os seus investimentos.
+                            Nossa plataforma mostra para você em um único lugar todas as informações importantes
+                            sobre suas aplicações financeiras.
+                        </>}
+                        mobileImage={`/images/nossos-servicos-2-mobile.png`}
+                        tabletImage={`/images/nossos-servicos-2-tablet.png`}
+                        image={`/images/nossos-servicos-2.png`}
+                    />
             </Container>
-
             <Container baseClassName={`z-50`} className={`relative !pb-0 z-50 `}>
                 <Wrapper className={`items-center justify-center`}>
                     <img
