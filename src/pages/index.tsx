@@ -9,6 +9,7 @@ import {DefaultTemplate} from "@/templates/Default";
 import {Flex, SimpleGrid, Stack} from "@chakra-ui/react";
 import Slide from "react-reveal/Slide";
 import ArrowTopRight from "../../public/icons/arrow-right-top.svg";
+import ArrowDown from '../../public/icons/arrow-down.svg'
 import CoinsIcon from "../../public/icons/coins.svg";
 import DARFIcon from "../../public/icons/darf.svg";
 import GraphicIcon from "../../public/icons/graphics.svg";
@@ -40,41 +41,43 @@ export default function Home() {
     };
     return (
         <DefaultTemplate>
-            <Container className={`relative !pt-24`}>
-                <Wrapper className={`items-center justify-center`}>
-                    <img
-                        className={`absolute left-0 w-full top-0 hidden xl:block`}
-                        src={`/backgrounds/home-1.png`}
-                    />
-                    <img
-                        className={`absolute left-0 w-full top-0 xl:hidden`}
-                        src={`/backgrounds/home-1-mobile.png`}
-                    />
-                    <Flex className={`flex-1 w-full z-50 gap-16 flex-col xl:flex-row`}>
-                        <Flex className={`flex-1`}>
-                            <Slide left>
-                                <Stack spacing={40} className={`flex-1`}>
-                                    <img
+             <Container className={`relative !pt-6 xl:pt-24  min-h-screen z-50`}>
+                <Wrapper className={`my-0 xl:my-auto items-start xl:items-center justify-start xl:justify-center`}>
+                    <img className={`absolute left-0 w-full h-full top-0 hidden xl:block object-cover`}
+                         src={`/backgrounds/nossos-servicos-1.png`}/>
+                    <img className={`absolute left-0 w-full h-auto bottom-0 ${isMedium && `!hidden`} xl:hidden `}
+                         src={`/backgrounds/nossos-servicos-1-mobile.png`}/>
+                    <img className={`absolute left-0 w-full h-auto bottom-0 -z-[1] ${!isMedium && `!hidden`} `}
+                         src={`/backgrounds/nossos-servicos-1-tablet.png`}/>
+                    <img className={`absolute left-0 w-full h-auto bottom-0 -z-[2] ${!isMedium && `!hidden`} `}
+                         src={`/backgrounds/quem-somos-5.png`}/>
+                    <Slide left>
+                        <Flex className={`flex-1 w-full z-50 gap-2 flex-col-reverse xl:flex-row`}>
+                            <Stack spacing={isMobile ? 32 : 40} className={`z-50`}>
+                            {/* <Text className={`h1-semibold !text-blue_primary`}>100% PRECISÃO</Text> */}
+                            <img
                                         src={"/icons/b3.svg"}
                                         className={`w-[140px] xl:w-[140px]`}
                                     />
-                                    <Text
-                                        className={`text-[30px] tracking-[-0.1rem] xl:tracking-[-0.2rem] xl:text-[44px] font-semibold`}
-                                        style={{
-                                            lineHeight: `111%`,
-                                        }}
-                                    >
-                                        A sua central de inteligência para seus investimentos na bolsa
+                          
+                                <Text className={`text-[30px] xl:text-[44px] font-semibold max-w-[500px]`} style={{
+                                    lineHeight: `111%`,
+                                    letterSpacing: `-4% `
+                                }}>A sua central de inteligência para seus investimentos na bolsa</Text>
+                                <Flex className={`gap-4 cursor-pointer items-center`}
+                                     >
+                                    <Text className={`!text-gray_3 inter h2-regular xl:text-[18px] max-w-[500px]`}>
+                                        Somos a plataforma de gestão de ativos <b>mais precisa do mercado</b>, para que você tenha 100% de controle sobre sua carteira.
                                     </Text>
-                                    <Text
-                                        className={`!text-gray_3 leading-[165%] inter h2-regular xl:text-[16px]`}
-                                    >
-                                        Somos a plataforma de gestão de ativos mais precisa do mercado, para que você tenha 100% de controle sobre sua carteira.
-                                    </Text>
-<Flex className="gap-2 justify-start flex-row">
-                                    <Button className={`!py-2 !pr-4 !h-max bg-transparent border border-white border-1`}>
+                                    <ArrowDown className={`scale-75 origin-top xl:scale-100 animate-bounce`}/>
+
+                                    
+                                </Flex>
+
+                                <Flex className="gap-4">
+                      <Button className={`!py-2 !px-6 !pr-6 !h-max bg-transparent border-white`}>
                       <Flex
-                        className={`items-center gap-2 !bg-transparent cursor-pointer [&>svg>path]:fill-white`}
+                        className={`items-center gap-2 cursor-pointer [&>svg>path]:fill-white`}
                       >
                         {<ArrowTopRight />}
                         <Text
@@ -85,7 +88,7 @@ export default function Home() {
                       </Flex>
                     </Button>
 
-                    <Button className={`!py-2 !h-max !pr-4`}>
+                    <Button className={`!py-2 !h-max !px-6 !pr-6`}>
                       <Flex
                         className={`items-center gap-2 cursor-pointer [&>svg>path]:fill-white`}
                       >
@@ -96,16 +99,79 @@ export default function Home() {
                           ACESSAR AGORA
                         </Text>
                       </Flex>
-                    </Button></Flex>
-                                </Stack>
-                            </Slide>
+                    </Button>
+                    </Flex>
+                            </Stack>
                         </Flex>
+                    </Slide>
+                </Wrapper>
+            </Container>
+            <Container className={`relative xl:!py-0`}>
+                <Wrapper className={`items-center justify-center`}>
+                    <Flex
+                        className={`flex-1 w-full z-50 gap-16 flex-col xl:flex-row justify-between`}
+                    >
+                          <Stack className={`flex-1 min-w-5/12 mx-auto max-w-[470px]`}>
+                            <img src={"/images/home-2.png"} className={`w-full`}/>
+                        </Stack>
                         <Stack
-                            className={`flex-1 ${
-                                isMedium && `w-8/12 mx-auto`
-                            } min-w-6/12 my-auto`}
+                            spacing={isMobile ? 16 : 40}
+                            className={`flex-1 justify-center xl:items-start items-center`}
                         >
-                            <img src={"/images/home-1.png"} className={`w-full`}/>
+                            <Flex
+                                className={`w-12 h-12 bg-blue_primary rounded-[12px] justify-center items-center`}
+                            >
+                                <PeoplesIcon/>
+                            </Flex>
+                            <Text
+                                className={`text-[24px] tracking-[-0.12rem] xl:text-[34px] !mt-4 text-center xl:text-left font-semibold`}
+                                style={{
+                                    lineHeight: `111%`,
+                                }}
+                            >
+                                Todas as corretoras em um só lugar.
+                            </Text>
+                            <Text
+                                className={`!text-gray_3 inter h2-regular xl:text-[16px] text-center xl:text-left`}
+                            >
+                                Esqueça a necessidade de acessar varias corretoras para manter a sua carteira em dia. Nossa inteligência de dados reúne tudo em um só lugar, com máxima precisão.
+                            </Text>
+                        </Stack>
+                    
+                    </Flex>
+                </Wrapper>
+            </Container>
+            <Container className={`relative xl:!py-0`}>
+                <Wrapper className={`items-center justify-center`}>
+                    <Flex
+                        className={`flex-1 w-full z-50 gap-16 flex-col xl:flex-row justify-between`}
+                    >
+                          
+                        <Stack
+                            spacing={isMobile ? 16 : 40}
+                            className={`flex-1 justify-center xl:items-start items-center`}
+                        >
+                            <Flex
+                                className={`w-12 h-12 bg-blue_primary rounded-[12px] justify-center items-center`}
+                            >
+                                <PeoplesIcon/>
+                            </Flex>
+                            <Text
+                                className={`text-[24px] tracking-[-0.12rem] xl:text-[34px] !mt-4 text-center xl:text-left font-semibold`}
+                                style={{
+                                    lineHeight: `111%`,
+                                }}
+                            >
+                                Sua Carteira 100% sincronizada
+                            </Text>
+                            <Text
+                                className={`!text-gray_3 inter h2-regular xl:text-[16px] text-center xl:text-left`}
+                            >
+                                Nosso algoritmo proprietário é capaz de sincronizar 100% a sua carteira. Ponto. Independente da complexidade das suas operações, o boleta.ai irá te entregar um retrato real dos seus investimentos.
+                            </Text>
+                        </Stack>
+                        <Stack className={`flex-1 min-w-5/12 mx-auto max-w-[470px]`}>
+                            <img src={"/images/home-2.png"} className={`w-full`}/>
                         </Stack>
                     </Flex>
                 </Wrapper>
@@ -114,49 +180,7 @@ export default function Home() {
                 <Wrapper className={`items-center justify-center`}>
                     <Flex className={`flex-1 w-full gap-16 flex-col xl:flex-row`}>
                         <Stack spacing={40} className={`flex-1 items-center`}>
-                            <Slide left>
-                                <SimpleGrid
-                                    columns={isMedium ? 2 : isMobile ? 1 : 3}
-                                    className={`flex-1 w-full gap-3`}
-                                >
-                                    <Link href={`/nossos-servicos`}>
-                                        <OpportunityItem
-                                            title={`Cálculo de DARF`}
-                                            icon={<DARFIcon/>}
-                                        />
-                                    </Link>
-                                    <Link href={`/nossos-servicos`}>
-                                        <OpportunityItem
-                                            title={`Visão geral dos investimentos`}
-                                            icon={<CoinsIcon/>}
-                                        />
-                                    </Link>
-                                    <Link href={`/nossos-servicos`}>
-                                        <OpportunityItem
-                                            title={`Relatório de Rentabilidade`}
-                                            icon={<GraphicIcon/>}
-                                        />
-                                    </Link>
-                                    <Link href={`/nossos-servicos`}>
-                                        <OpportunityItem
-                                            title={`Cálculo de Performance`}
-                                            icon={<PerformanceIcon/>}
-                                        />
-                                    </Link>
-                                    <Link href={`/nossos-servicos`}>
-                                        <OpportunityItem
-                                            title={`Margens e Garantias`}
-                                            icon={<MarginsIcon/>}
-                                        />
-                                    </Link>
-                                    <Link href={`/nossos-servicos`}>
-                                        <OpportunityItem
-                                            title={`Contratos e Aluguéis`}
-                                            icon={<ContractIcon/>}
-                                        />
-                                    </Link>
-                                </SimpleGrid>
-                            </Slide>
+                            
                             <Text
                                 className={`text-[24px] tracking-[-0.08rem] text-center font-semibold`}
                                 style={{
@@ -181,43 +205,7 @@ export default function Home() {
                     </Flex>
                 </Wrapper>
             </Container>
-            <Container className={`relative xl:!py-0`}>
-                <Wrapper className={`items-center justify-center`}>
-                    <Flex
-                        className={`flex-1 w-full z-50 gap-16 flex-col xl:flex-row justify-between`}
-                    >
-                        <Stack
-                            spacing={isMobile ? 16 : 40}
-                            className={`flex-1 justify-center xl:items-start items-center`}
-                        >
-                            <Flex
-                                className={`w-12 h-12 bg-blue_primary rounded-[12px] justify-center items-center`}
-                            >
-                                <PeoplesIcon/>
-                            </Flex>
-                            <Text
-                                className={`text-[24px] tracking-[-0.12rem] xl:text-[34px] !mt-4 text-center xl:text-left font-semibold`}
-                                style={{
-                                    lineHeight: `111%`,
-                                }}
-                            >
-                                Todas as corretoras em um só lugar.
-                            </Text>
-                            <Text
-                                className={`!text-gray_3 inter h2-regular xl:text-[16px] text-center xl:text-left`}
-                            >
-                                Conecte-se ao universo dos investimentos de uma forma
-                                revolucionária. Uma experiência <b>única</b> para os
-                                investidores que buscam uma plataforma inovadora, inteligente e
-                                intuitiva.
-                            </Text>
-                        </Stack>
-                        <Stack className={`flex-1 min-w-5/12 mx-auto max-w-[470px]`}>
-                            <img src={"/images/home-2.png"} className={`w-full`}/>
-                        </Stack>
-                    </Flex>
-                </Wrapper>
-            </Container>
+
             <Container baseClassName={`z-50`} className={`relative !pb-0 z-50 `}>
                 <Wrapper className={`items-center justify-center`}>
                     <img
