@@ -47,7 +47,7 @@ export default function Home() {
               <Wrapper
                   className={`my-0 xl:my-auto items-start xl:items-center justify-start xl:justify-center !flex-col gap-10 [&>div]:overflow-hidden`}>
                   <Flex
-                      className={`w-full z-50 gap-16 flex-col xl:flex-row ${black ? `bg-1` : `bg-white` } pb-0 px-6 pt-6 xl:px-16 xl:py-32 rounded-[24px] bg-gray_1/35 shadow-common relative`}>
+                      className={`w-full z-50 gap-16 flex-col xl:flex-row ${black ? `bg-1` : `bg-white` } pb-0 px-6 pt-6 xl:px-16 xl:py-32 rounded-[24px] shadow-common relative`}>
                       <Stack spacing={16} className={`xl:w-[46%]`}>
                           <Box className={`bg-blue_primary w-max p-2 rounded-[16px]`}>
                               <img src={`/icons/darf-title.svg`} className={`w-[32px]`}/>
@@ -77,11 +77,11 @@ export default function Home() {
 
   const ElementRTL = useCallback(({title, description, image, tabletImage, mobileImage}: any) => {
       return (
-          <Container className={`relative xl:!pt-0 xl:!pb-0  z-50 `}>
+          <Container className={`relative xl:!pt-0 xl:!pb-12 z-50 `}>
               <Wrapper
                   className={`my-0  xl:my-auto items-start xl:items-center justify-start xl:justify-center !flex-col gap-10 [&>div]:overflow-hidden `}>
                   <Flex
-                      className={`w-full !shadow-lg z-50 gap-16 flex-col xl:flex-row bg-1 pt-0 px-6 pb-6 xl:px-16 xl:py-32 bg-gray_1/35 rounded-[24px] relative justify-end`}>
+                      className={`w-full !shadow-white z-50 gap-16 flex-col xl:flex-row bg-1 pt-0 px-6 pb-6 xl:px-16 xl:py-32 rounded-[24px] relative justify-end`}>
                       <Flex className={`justify-center items-center w-full xl:w-5/12 h-full xl:absolute left-0 bottom-0`}>
                           <Slide left>
                               <img
@@ -174,7 +174,7 @@ export default function Home() {
                     </Slide>
                 </Wrapper>
             </Container>
-            <Container className={`relative xl:!py-0`}>
+            <Container className={`relative pt-12`}>
                 <Wrapper className={`items-center justify-center`}>
                     <Flex
                         className={`flex-1 w-full z-50 gap-16 flex-col xl:flex-row justify-between`}
@@ -235,6 +235,18 @@ export default function Home() {
                             >
                                 Nosso algoritmo proprietário é capaz de sincronizar 100% a sua carteira. Ponto. Independente da complexidade das suas operações, o boleta.ai irá te entregar um retrato real dos seus investimentos.
                             </Text>
+                            <Button className={`!py-2 !h-max !px-6 !pr-6`}>
+                      <Flex
+                        className={`items-center gap-2 cursor-pointer [&>svg>path]:fill-white`}
+                      >
+                        {<ArrowTopRight />}
+                        <Text
+                          className={`h3-semibold-uppercase xl:!h-4 !text-white`}
+                        >
+                          ACESSAR AGORA
+                        </Text>
+                      </Flex>
+                    </Button>
                         </Stack>
                         <Stack className={`flex-1 min-w-5/12 mx-auto max-w-[470px]`}>
                             <img src={"/images/home-2.png"} className={`w-full`}/>
@@ -263,7 +275,7 @@ export default function Home() {
                         image={`/images/nossos-servicos-2.png`}
                     />
 
-<Element dark
+<Element
                 title={`Cálculo de DARF`}
                 description={<>
                     Nós sabemos que a declaração do Imposto de Renda pode ser um verdadeiro pesadelo para
