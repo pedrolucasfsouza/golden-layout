@@ -18,6 +18,7 @@ import MarginsIcon from "../../public/icons/oportunidades/margins.svg";
 import PerformanceIcon from "../../public/icons/oportunidades/performance.svg";
 import PeoplesIcon from "../../public/icons/peoples.svg";
 import { useCallback } from "react";
+import SolarSystem from "@/components/ViaLacteaAnimation";
 
 export default function Home() {
     const {isMobile, isMedium} = useWindow({
@@ -176,8 +177,9 @@ export default function Home() {
             </Container>
             <Container className={`relative pt-12`}>
                 <Wrapper className={`items-center justify-center`}>
+                <SolarSystem />
                     <Flex
-                        className={`flex-1 w-full z-50 gap-16 flex-col xl:flex-row justify-between`}
+                        className={`ml-96 z-50 gap-16 flex-col xl:flex-row justify-between`}
                     >
     
                         <Stack
@@ -198,17 +200,18 @@ export default function Home() {
                                 Todas as corretoras em um só lugar.
                             </Text>
                             <Text
-                                className={`!text-gray_3 inter h2-regular xl:text-[16px] text-center xl:text-left`}
+                                className={`!text-gray_3 inter h2-regular xl:text-[20px] text-center xl:text-left`}
                             >
                                 Esqueça a necessidade de acessar varias corretoras para manter a sua carteira em dia. Nossa inteligência de dados reúne tudo em um só lugar, com máxima precisão.
                             </Text>
                         </Stack>
-                    
+                        
                     </Flex>
                 </Wrapper>
             </Container>
             <Container className={`relative xl:!py-0`}>
                 <Wrapper className={`items-center justify-center`}>
+                  
                     <Flex
                         className={`flex-1 w-full z-50 gap-16 flex-col xl:flex-row justify-between`}
                     >

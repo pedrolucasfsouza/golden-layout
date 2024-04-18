@@ -4,6 +4,7 @@ import type {AppProps} from 'next/app'
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as fbq from '../lib/fpixel'
+import './style_via_lactea_animation.css'
 import { useRouter } from 'next/router';
 import Script from "next/script";
 import { useEffect } from 'react';
