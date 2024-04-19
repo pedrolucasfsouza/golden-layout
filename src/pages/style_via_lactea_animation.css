@@ -28,8 +28,8 @@ body #solar-system
     display: flex;  
     width: 50%;
     height: 3%;
-    margin-top: 150px;
-    margin-left: 150px;
+    margin-top: 200px;
+    margin-left: 200px;
     margin-bottom: 200px;
 
     -webkit-transform: skewX(-45deg);
@@ -375,8 +375,9 @@ smartphone*/
 
 {
 
-body #solar-system
+    body #solar-system
 {
+
     margin-top: 0px;
     margin-left: 0px;
     margin-bottom: 0px;

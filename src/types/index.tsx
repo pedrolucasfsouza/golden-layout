@@ -2,7 +2,6 @@ import {ReactNode} from "react";
 
 import {ColumnDef} from "@tanstack/react-table";
 import React, {HTMLProps} from "react";
-import {number} from "prop-types";
 export type TemplateProps = {
     children: ReactNode
 }
